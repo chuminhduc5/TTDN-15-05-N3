@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_phuong_tien_form" model="ir.ui.view">
+            <field name="name">phuong_tien</field>
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Phương tiện</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ma_dinh_danh"/>
+                            <field name="bien_so"/>
+                            <field name="loai_xe"/>
+                            <field name="hang_san_xuat"/>
+                            <field name="mau_xe"/>
+                            <field name="nam_san_xuat"/>
+                            <field name="trang_thai"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_phuong_tien_tree" model="ir.ui.view">
+            <field name="name">phuong_tien</field>
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_dinh_danh"/>
+                    <field name="bien_so"/>
+                    <field name="loai_xe"/>
+                    <field name="hang_san_xuat"/>
+                    <field name="mau_xe"/>
+                    <field name="nam_san_xuat"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="phuong_tien_search">
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_dinh_danh"/>
+                    <field name="bien_so"/>
+                    <field name="loai_xe"/>
+                    <field name="hang_san_xuat"/>
+                    <field name="mau_xe"/>
+                    <field name="nam_san_xuat"/>
+                    <field name="trang_thai"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_phuong_tien" model="ir.actions.act_window">
+            <field name="name">Phương tiện</field>
+            <field name="res_model">phuong_tien</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="phuong_tien_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

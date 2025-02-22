@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nhan_su",
+    'name': "phuong_tien",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -26,7 +26,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/phuong_tien.xml',
-        'views/phong_ban.xml',
         'views/menu.xml',
     ],
 }

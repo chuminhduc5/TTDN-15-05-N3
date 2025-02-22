@@ -25,7 +25,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/nhan_vien.xml',
+        'views/phuong_tien.xml',
         'views/phong_ban.xml',
         'views/chuc_vu.xml',
         'views/menu.xml',
