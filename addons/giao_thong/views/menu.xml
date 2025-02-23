@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="menu_root"
+            name="QLPT"
+            sequence="0"/>
+          
+        <menuitem name="Quản lý phương tiện"
+            id="menu_phuong_tien"
+            parent="menu_root" 
+            sequence="1"
+            action="action_phuong_tien"
+        />
+
+        <menuitem name="Quản lý khách hàng"
+            id="menu_khach_hang"
+            parent="menu_root"
+            sequence="2"
+            action="action_khach_hang"
+        />
+    </data>
+</odoo>
