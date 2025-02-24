@@ -27,6 +27,7 @@
         'security/ir.model.access.csv',
         'views/phuong_tien.xml',
         'views/khach_hang.xml',
+        'views/phieu_muon_xe.xml'
         'views/menu.xml',
     ],
 }

@@ -19,5 +19,12 @@
             sequence="2"
             action="action_khach_hang"
         />
+
+        <menuitem name="Quản lý phiếu mượn xe"
+            id="menu_phieu_muon_xe"
+            parent="menu_root"
+            sequence="3"
+            action="action_phieu_muon_xe"
+        />
     </data>
 </odoo>
