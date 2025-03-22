@@ -79,3 +79,5 @@ Hoàn tất
 Biểu đồ tròn thống kê tổng số phương tiện
 ![alt text](image-1.png)
 Biểu đồ cột thống kê tổng số phương tiện
+
+#6. Hoàn thành
