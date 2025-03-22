@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_phieu_muon_xe_form" model="ir.ui.view">
+            <field name="name">phieu_muon_xe</field>
+            <field name="model">phieu_muon_xe</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Phiếu mượn xe</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ma_phieu_muon_xe"/>
+                            <field name="ma_nv_noi_bo"/>
+                            <field name="ma_phuong_tien"/>
+                            <field name="ma_nhan_vien"/>
+                            <field name="diem_bat_dau"/>
+                            <field name="diem_ket_thuc"/>
+                            <field name="ngay_dang_ky_muon"/>
+                            <field name="ngay_dang_ky_tra"/>
+                            <field name="ngay_muon_thuc_te"/>
+                            <field name="ngay_tra_thuc_te"/>
+                            <field name="ngay_tao"/>
+                            <field name="ngay_cap_nhat"/>
+                            <field name="muc_dich"/>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_phieu_muon_xe_tree" model="ir.ui.view">
+            <field name="name">phieu_muon_xe</field>
+            <field name="model">phieu_muon_xe</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_phieu_muon_xe"/>
+                    <field name="ma_nv_noi_bo"/>
+                    <field name="ma_phuong_tien"/>
+                    <field name="ma_nhan_vien"/>
+                    <field name="diem_bat_dau"/>
+                    <field name="diem_ket_thuc"/>
+                    <field name="ngay_dang_ky_muon"/>
+                    <field name="ngay_dang_ky_tra"/>
+                    <field name="ngay_muon_thuc_te"/>
+                    <field name="ngay_tra_thuc_te"/>
+                    <field name="trang_thai"/>
+                    <field name="muc_dich"/>
+
+                    <button name="action_duyet" string="Duyệt" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+
+                    <button name="action_huy_duyet" string="Hủy duyệt" type="object" class="btn-danger"
+                            attrs="{'invisible': [('trang_thai', '!=', 'dang_muon')]}"/>
+
+                    <button name="action_hoan_thanh" string="Hoàn thành" type="object" class="btn-success"
+                            attrs="{'invisible': [('trang_thai', '!=', 'dang_muon')]}"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="phieu_muon_xe_search">
+            <field name="model">phieu_muon_xe</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_phieu_muon_xe"/>
+                    <field name="ma_nv_noi_bo"/>
+                    <field name="ma_phuong_tien"/>
+                    <field name="ma_nhan_vien"/>
+                    <field name="diem_bat_dau"/>
+                    <field name="diem_ket_thuc"/>
+                    <field name="ngay_dang_ky_muon"/>
+                    <field name="ngay_dang_ky_tra"/>
+                    <field name="ngay_muon_thuc_te"/>
+                    <field name="ngay_tra_thuc_te"/>
+                    <field name="trang_thai"/>
+                    <field name="muc_dich"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_phieu_muon_xe" model="ir.actions.act_window">
+            <field name="name">Phiếu mượn xe</field>
+            <field name="res_model">phieu_muon_xe</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="phieu_muon_xe_search"/>
+        </record>
+    </data>
+</odoo>

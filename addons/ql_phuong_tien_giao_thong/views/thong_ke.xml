@@ -1,0 +1,41 @@
+<!--<odoo>-->
+<!--    <record id="view_thong_ke_form" model="ir.ui.view">-->
+<!--        <field name="name">thong.ke.form</field>-->
+<!--        <field name="model">thong_ke</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Thống kê phương tiện">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="tong_so_phuong_tien"/>-->
+<!--                        <field name="so_luong_san_sang"/>-->
+<!--                        <field name="so_luong_dang_hoat_dong"/>-->
+<!--                        <field name="so_luong_bao_tri"/>-->
+<!--                    </group>-->
+<!--                    <footer>-->
+<!--                        <button name="compute_stats" string="Tính toán" type="object" class="btn-primary"/>-->
+<!--                    </footer>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="view_thong_ke_graph" model="ir.ui.view">-->
+<!--        <field name="name">thong.ke.phuong.tien.graph</field>-->
+<!--        <field name="model">thong_ke</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <graph string="Thống kê trạng thái phương tiện" type="bar">-->
+<!--                <field name="tong_so_phuong_tien" type="measure"/>-->
+<!--                <field name="so_luong_san_sang" type="measure"/>-->
+<!--                <field name="so_luong_dang_hoat_dong" type="measure"/>-->
+<!--                <field name="so_luong_bao_tri" type="measure"/>-->
+<!--            </graph>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="action_thong_ke" model="ir.actions.act_window">-->
+<!--        <field name="name">Thống kê phương tiện</field>-->
+<!--        <field name="res_model">thong_ke</field>-->
+<!--        <field name="view_mode">form,graph</field> &lt;!&ndash; Đổi thứ tự để mở form trước &ndash;&gt;-->
+<!--        <field name="view_id" ref="view_thong_ke_form"/> &lt;!&ndash; Mở form mặc định &ndash;&gt;-->
+<!--    </record>-->
+<!--</odoo>-->

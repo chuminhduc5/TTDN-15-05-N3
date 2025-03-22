@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_phuong_tien_form" model="ir.ui.view">
+            <field name="name">phuong_tien</field>
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Phương tiện</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ma_phuong_tien"/>
+                            <field name="loai_xe" widget="selection"/>
+                            <field name="ten_phuong_tien"/>
+                            <field name="bien_so"/>
+                            <field name="hang_san_xuat"/>
+                            <field name="so_cho"/>
+                            <field name="mau_xe"/>
+                            <field name="nam_san_xuat"/>
+                            <field name="trang_thai"/>
+                        </group>
+                        <notebook>
+                            <page string = "Thông tin nhiên liệu">
+                                <field name="ma_tieu_hao_nhien_lieu"/>
+                            </page>
+                            <page string = "Thông tin vị trí">
+                                <field name="ma_vi_tri"/>
+                            </page>
+                            <page string = "Thông tin bảo trì">
+                                <field name="ma_bao_tri"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_phuong_tien_graph" model="ir.ui.view">
+            <field name="name">phuong_tien.graph</field>
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <graph type="pie" string="Phân bố trạng thái phương tiện">
+                    <field name="trang_thai" type="row"/>
+                    <field name="id" type="measure" operator="count"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_phuong_tien_graph_loai_xe" model="ir.ui.view">
+            <field name="name">phuong_tien.graph_loai_xe</field>
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <graph type="bar" string="Số lượng theo loại xe">
+                    <field name="loai_xe" type="row"/>
+                    <field name="id" type="measure" operator="count"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_phuong_tien_graph_trang_thai_loai_xe" model="ir.ui.view">
+            <field name="name">phuong_tien.graph_trang_thai_loai_xe</field>
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <graph type="bar" string="Trạng thái theo loại xe" stacked="True">
+                    <field name="loai_xe" type="col"/>
+                    <field name="trang_thai" type="row"/>
+                    <field name="id" type="measure" operator="count"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_phuong_tien_tree" model="ir.ui.view">
+            <field name="name">phuong_tien</field>
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_phuong_tien"/>
+                    <field name="loai_xe"/>
+                    <field name="ten_phuong_tien"/>
+                    <field name="bien_so"/>
+                    <field name="hang_san_xuat"/>
+                    <field name="so_cho"/>
+                    <field name="mau_xe"/>
+                    <field name="nam_san_xuat"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="phuong_tien_search">
+            <field name="model">phuong_tien</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="bien_so"/>
+                    <field name="loai_xe"/>
+                    <field name="ten_phuong_tien"/>
+                    <field name="hang_san_xuat"/>
+                    <field name="so_cho"/>
+                    <field name="mau_xe"/>
+                    <field name="nam_san_xuat"/>
+                    <field name="trang_thai"/>
+                    <searchpanel>
+                        <field name="loai_xe" filter="1"/>
+                    </searchpanel>
+                    <filter name="trang_thai_dang_hoat_dong" string="Đang hoạt động" domain="[('trang_thai','=','dang_hoat_dong')]"/>
+                    <filter name="trang_thai_bao_tri" string="Bảo trì" domain="[('trang_thai','=','bao_tri')]"/>
+                    <filter name="trang_thai_san_sang" string="Sẵn sàng" domain="[('trang_thai','=','san_sang')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_phuong_tien" model="ir.actions.act_window">
+            <field name="name">Phương tiện</field>
+            <field name="res_model">phuong_tien</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="search_view_id" ref="phuong_tien_search"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_vi_tri_form" model="ir.ui.view">
+            <field name="name">vi_tri</field>
+            <field name="model">vi_tri</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Vị trí</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ma_phuong_tien"/>
+                            <field name="kinh_do"/>
+                            <field name="vi_do"/>
+                            <field name="thoi_gian_cap_nhat"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_vi_tri_tree" model="ir.ui.view">
+            <field name="name">vi_tri</field>
+            <field name="model">vi_tri</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_phuong_tien"/>
+                    <field name="kinh_do"/>
+                    <field name="vi_do"/>
+                    <field name="thoi_gian_cap_nhat"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vi_tri_search">
+            <field name="model">vi_tri</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_phuong_tien"/>
+                    <field name="kinh_do"/>
+                    <field name="vi_do"/>
+                    <field name="thoi_gian_cap_nhat"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_vi_tri" model="ir.actions.act_window">
+            <field name="name">Vị trí</field>
+            <field name="res_model">vi_tri</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="vi_tri_search"/>
+        </record>
+    </data>
+</odoo>
