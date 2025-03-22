@@ -84,4 +84,4 @@ Giao diện quản lý phương tiện
 
 #6. Hoàn thành
 ![alt text](image-3.png)
-Poster
+
