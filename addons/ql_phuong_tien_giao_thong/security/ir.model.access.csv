@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_phuong_tien,phuong_tien.phuong_tien,model_phuong_tien,base.group_user,1,1,1,1
+access_nv_noi_bo,nv_noi_bo.nv_noi_bo,model_nv_noi_bo,base.group_user,1,1,1,1
+access_phieu_muon_xe,phieu_muon_xe.phieu_muon_xe,model_phieu_muon_xe,base.group_user,1,1,1,1
+access_bao_tri,bao_tri.bao_tri,model_bao_tri,base.group_user,1,1,1,1
+access_loai_xe,loai_xe.loai_xe,model_loai_xe,base.group_user,1,1,1,1
+access_nhien_lieu,nhien_lieu.nhien_lieu,model_nhien_lieu,base.group_user,1,1,1,1
+access_lich_su_su_dung,lich_su_su_dung.lich_su_su_dung,model_lich_su_su_dung,base.group_user,1,1,1,1
+access_vi_tri,vi_tri.vi_tri,model_vi_tri,base.group_user,1,1,1,1
+access_phong_ban,phong_ban.phong_ban,model_phong_ban,base.group_user,1,1,1,1

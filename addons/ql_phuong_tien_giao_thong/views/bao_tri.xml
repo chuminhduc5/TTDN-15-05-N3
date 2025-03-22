@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bao_tri_form" model="ir.ui.view">
+            <field name="name">bao_tri</field>
+            <field name="model">bao_tri</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Bảo trì</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ma_bao_tri"/>
+                            <field name="ma_phuong_tien"/>
+                            <field name="bien_so"/>
+                            <field name="mo_ta"/>
+                            <field name="ngay_bao_tri"/>
+                            <field name="ngay_bao_tri_tiep_theo"/>
+                            <field name="chi_phi"/>
+                            <field name="ma_phieu_muon_xe"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_bao_tri_tree" model="ir.ui.view">
+            <field name="name">bao_tri</field>
+            <field name="model">bao_tri</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_bao_tri"/>
+                    <field name="ma_phuong_tien"/>
+                    <field name="bien_so"/>
+                    <field name="mo_ta"/>
+                    <field name="ngay_bao_tri"/>
+                    <field name="ngay_bao_tri_tiep_theo"/>
+                    <field name="chi_phi"/>
+                    <field name="ma_phieu_muon_xe"/>
+                    <field name="trang_thai"/>
+
+                    <button name="action_duyet" string="Duyệt" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+
+                    <button name="action_huy_duyet" string="Hủy duyệt" type="object" class="btn-danger"
+                            attrs="{'invisible': [('trang_thai', '!=', 'dang_bao_tri')]}"/>
+
+                    <button name="action_hoan_thanh" string="Hoàn thành" type="object" class="btn-success"
+                            attrs="{'invisible': [('trang_thai', '!=', 'dang_bao_tri')]}"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="bao_tri_search">
+            <field name="model">bao_tri</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_bao_tri"/>
+                    <field name="ma_phuong_tien"/>
+                    <field name="ngay_bao_tri"/>
+                    <field name="chi_phi"/>
+                    <field name="ngay_bao_tri_tiep_theo"/>
+                    <field name="ma_phieu_muon_xe"/>
+<!--                    <searchpanel>-->
+<!--                        <field name="ma_phuong_tien" filter="1"/>-->
+<!--                    </searchpanel>-->
+                </search>
+            </field>
+        </record>
+
+        <record id="action_bao_tri" model="ir.actions.act_window">
+            <field name="name">Bảo trì</field>
+            <field name="res_model">bao_tri</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="bao_tri_search"/>
+        </record>
+    </data>
+</odoo>

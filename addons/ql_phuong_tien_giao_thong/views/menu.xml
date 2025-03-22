@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="menu_root"
+            name="QLDHPTGT"
+            sequence="0"/>
+
+<!--        <menuitem name="Thống kê hệ thống"-->
+<!--                  id="menu_thong_ke"-->
+<!--                  parent="menu_root"-->
+<!--                  sequence="1"-->
+<!--                  action="action_thong_ke"-->
+<!--        />-->
+
+        <menuitem name="Danh mục quản lý phương tiện"
+            id="menu_danh_muc_phuong_tien"
+            parent="menu_root"
+            sequence="1"
+        />
+
+        <menuitem name="Quản lý phương tiện"
+            id="menu_phuong_tien"
+            parent="menu_danh_muc_phuong_tien"
+            sequence="1"
+            action="action_phuong_tien"
+        />
+
+        <menuitem name="Quản lý loại xe"
+            id="menu_loai_xe"
+            parent="menu_danh_muc_phuong_tien"
+            sequence="2"
+            action="action_loai_xe"
+        />
+
+        <menuitem name="Quản lý nhiên liệu"
+            id="menu_nhien_lieu"
+            parent="menu_danh_muc_phuong_tien"
+            sequence="3"
+            action="action_nhien_lieu"
+        />
+
+        <menuitem name="Quản lý vị trí"
+            id="menu_vi_tri"
+            parent="menu_danh_muc_phuong_tien"
+            sequence="4"
+            action="action_vi_tri"
+        />
+
+        <menuitem name="Quản lý bảo trì"
+            id="menu_bao_tri"
+            parent="menu_danh_muc_phuong_tien"
+            sequence="5"
+            action="action_bao_tri"
+        />
+
+        <menuitem name="Danh mục quản lý nhân viên nội bộ"
+            id="menu_danh_muc_nv_noi_bo"
+            parent="menu_root"
+            sequence="2"
+            action="action_nv_noi_bo"
+        />
+
+        <menuitem name="Quản lý nhân viên nội bộ"
+            id="menu_nv_noi_bo"
+            parent="menu_danh_muc_nv_noi_bo"
+            sequence="1"
+            action="action_nv_noi_bo"
+        />
+
+        <menuitem name="Quản lý phòng ban"
+            id="menu_phong_ban"
+            parent="menu_danh_muc_nv_noi_bo"
+            sequence="2"
+            action="action_phong_ban"
+        />
+
+
+        <menuitem name="Quản lý phiếu mượn xe"
+            id="menu_phieu_muon_xe"
+            parent="menu_root"
+            sequence="3"
+            action="action_phieu_muon_xe"
+        />
+
+        <menuitem name="Lịch sử sử dụng"
+            id="menu_lich_su_su_dung"
+            parent="menu_root"
+            sequence="4"
+            action="action_lich_su_su_dung"
+        />
+
+    </data>
+</odoo>

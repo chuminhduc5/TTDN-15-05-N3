@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_nv_noi_bo_form" model="ir.ui.view">
+            <field name="name">nv_noi_bo</field>
+            <field name="model">nv_noi_bo</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Nhân viên nội bộ</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ma_nv_noi_bo"/>
+                            <field name="ho_ten"/>
+                            <field name="ngay_sinh"/>
+                            <field name="cccd"/>
+                            <field name="sdt"/>
+                            <field name="email"/>
+                            <field name="dia_chi"/>
+                            <field name="ma_phong_ban"/>
+                            <field name="ngay_dang_ky"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_nv_noi_bo_tree" model="ir.ui.view">
+            <field name="name">nv_noi_bo</field>
+            <field name="model">nv_noi_bo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_nv_noi_bo"/>
+                    <field name="ho_ten"/>
+                    <field name="ngay_sinh"/>
+                    <field name="cccd"/>
+                    <field name="sdt"/>
+                    <field name="email"/>
+                    <field name="dia_chi"/>
+                    <field name="ma_phong_ban"/>
+                    <field name="ngay_dang_ky"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="nv_noi_bo_search">
+            <field name="model">nv_noi_bo</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ho_ten"/>
+                    <field name="ngay_sinh"/>
+                    <field name="cccd"/>
+                    <field name="sdt"/>
+                    <field name="email"/>
+                    <field name="dia_chi"/>
+                    <field name="ma_phong_ban"/>
+                    <field name="ngay_dang_ky"/>
+                    <searchpanel>
+                        <field name="ma_phong_ban" filter="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_nv_noi_bo" model="ir.actions.act_window">
+            <field name="name">Nhân viên nội bộ</field>
+            <field name="res_model">nv_noi_bo</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="nv_noi_bo_search"/>
+        </record>
+    </data>
+</odoo>
+
